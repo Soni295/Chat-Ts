@@ -6,7 +6,51 @@
   font-family: sans-serif;
 }
 #chat {
+  padding: 10px;
   height: 100%;
   width: 100%;
   display: flex;
+  background: red;
+  flex-direction: column;
+}
+#chat-usuarios-mensajes {
+  display: flex;
+  height: 80%;
+}
+#caja-mensajes {
+  border: 1px black solid;
+  border-radius: 15px 0px 0px 0px;
+  display: flex;
+  background: whitesmoke;
+  flex-direction: column;
+  flex: 3;
+  padding: 10px;
+}
+
+#lista-usuarios {
+  border: 1px black solid;
+  border-radius: 0px 15px 0px 0px;
+  flex-direction: column;
+  display: flex;
+  background: #fff;
+  flex: 1;
+  margin-left: 10px;
+  padding: 20px;
+  overflow: auto;
+}
+#formulario-chat {
+  display: flex;
+  height: 20%;
+  padding-top: 10px;
+  width: 100%;
+}
+#formulario-chat > textarea {
+  border-radius: 20px 0px 0px 20px;
+  width: 100%;
+  padding: 10px;
+  resize: none;
+}
+#formulario-chat > button {
+  border-radius: 0px 20px 20px 0px;
+  padding: 10px;
 }

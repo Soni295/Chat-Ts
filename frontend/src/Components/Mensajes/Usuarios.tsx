@@ -13,7 +13,7 @@ const selecUsuario = () => {
 };
 const Usuarios = (props: { datosMensajes: AO }) => {
   return (
-    <>
+    <div id="lista-usuarios">
       {props.datosMensajes.map((m: mensaje, indice: number) => {
         return (
           <div key={indice} onClick={selecUsuario}>
@@ -21,7 +21,7 @@ const Usuarios = (props: { datosMensajes: AO }) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

@@ -14,7 +14,7 @@ export const CajaMensajes = (props: {
   usuario: string;
 }): JSX.Element => {
   return (
-    <>
+    <div id="caja-mensajes">
       {props.datosMensajes.map((m: mensaje, indice: number) => {
         if (m.usuario === props.usuario) {
           return <div key={indice}>{m.mensaje}</div>;
@@ -22,6 +22,6 @@ export const CajaMensajes = (props: {
           return <div key={indice}>{m.mensaje}</div>;
         }
       })}
-    </>
+    </div>
   );
 };

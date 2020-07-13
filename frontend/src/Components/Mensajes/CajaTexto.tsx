@@ -13,10 +13,10 @@ export const CajaTexto = (): JSX.Element => {
   };
 
   return (
-    <form onSubmit={(e: any) => actualizarTextos(e)}>
-      <input
+    <form id="formulario-chat" onSubmit={(e: any) => actualizarTextos(e)}>
+      <textarea
+        autoFocus
         onChange={(e) => setTexto(e.target.value)}
-        type="text"
         value={texto}
       />
       <button>Enviar</button>
