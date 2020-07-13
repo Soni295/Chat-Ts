@@ -9,9 +9,13 @@ const usuario = "Juan";
 const Chat = (): JSX.Element => {
   return (
     <div>
-      <div id="chat">
-        <CajaMensajes usuario={usuario} datosMensajes={datos} />
-        <Usuarios datosMensajes={datos} />
+      <div>
+        <div>
+          <CajaMensajes usuario={usuario} datosMensajes={datos} />
+        </div>
+        <div>
+          <Usuarios datosMensajes={datos} />
+        </div>
       </div>
       <CajaTexto />
     </div>
