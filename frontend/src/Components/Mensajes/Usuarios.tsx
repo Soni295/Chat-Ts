@@ -11,7 +11,7 @@ interface mensaje {
 const selecUsuario = () => {
   alert("Hola");
 };
-const Usuarios = (props: { datosMensajes: AO }) => {
+const Usuarios = (props: { datosMensajes: AO }): JSX.Element => {
   return (
     <div id="lista-usuarios">
       {props.datosMensajes.map((m: mensaje, indice: number) => {

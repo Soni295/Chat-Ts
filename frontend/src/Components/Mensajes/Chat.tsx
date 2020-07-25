@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { CajaMensajes } from "./CajaMensajes";
 import { Usuarios } from "./Usuarios";
@@ -6,13 +6,20 @@ import { CajaTexto } from "./CajaTexto";
 
 import { datos } from "./Conexiones"; //Luego quitarlos
 
-const usuario = "Juan";
-const Chat = (): JSX.Element => {
-  const [datosDelchat, setDatosDelchat] = useState();
+import { Redirect } from "react-router-dom";
+
+const Chat = (props: { usuario: string }): JSX.Element => {
+  const [datosDelchat, setDatosDelchat] = useState<string>("");
+  useEffect(() => {
+    console.log();
+  }, []);
+
+  if (props.usuario) return <Redirect to="/" />;
+
   return (
     <div id="chat">
       <div id="chat-usuarios-mensajes">
-        <CajaMensajes usuario={usuario} datosMensajes={datos} />
+        <CajaMensajes usuario={props.usuario} datosMensajes={datos} />
         <Usuarios datosMensajes={datos} />
       </div>
       <CajaTexto />

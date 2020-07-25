@@ -7,7 +7,8 @@ const datos: Array<Object> = [
   { usuario: "Juan", mensaje: "Julieta...?", nMensaje: 6, chat: "3" },
 ];
 
-const chats = (emisor: string): void => {
-  console.log("hola");
-};
+const peticiones = () => {};
+
+const chats = (emisor: string): void => {};
+
 export { datos, chats };
