@@ -7,7 +7,7 @@ const datos: Array<Object> = [
   { usuario: "Juan", mensaje: "Julieta...?", nMensaje: 6, chat: "3" },
 ];
 
-const peticiones = () => {};
+//const peticiones = () => {};
 
 const chats = (emisor: string): void => {};
 

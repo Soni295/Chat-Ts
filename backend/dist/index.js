@@ -14,5 +14,5 @@ app.use(body_parser_1.urlencoded({ extended: false }));
 app.use(express_1.default.json());
 app.use("", CtrlRoute_1.router);
 app.listen(constants_1.PORT, function () {
-    console.log("El server se ejecuta en el puerto:" + constants_1.PORT);
+    console.log("El server se ejecuta en: http://localhost:" + constants_1.PORT);
 });

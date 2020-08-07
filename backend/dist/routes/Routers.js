@@ -6,9 +6,7 @@ function index(req, res) {
 }
 exports.index = index;
 function chat(req, res) {
-    var user = req.body.NameUser;
-    var chat = req.body.IdChat;
-    console.log(req.body);
-    res.send([user, chat]);
+    var _a = req.body, user = _a.user, room = _a.room;
+    res.json(req.body);
 }
 exports.chat = chat;
