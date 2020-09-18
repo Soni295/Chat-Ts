@@ -7,27 +7,7 @@ var router = express_1.Router();
 exports.router = router;
 router
     .get("/", Routers_1.index)
-    .get("/Chat/:sala", Routers_1.index)
-    .post("/User", Routers_1.index)
-    .delete("/", Routers_1.index)
-    .get("/chat", Routers_1.chat)
-    .post("/chat", Routers_1.chat)
-    .delete("/chat", Routers_1.chat);
-/*
-
-data = {
-  user:'Juan',
-  room:'1'
-}
-
-metodo = {
-  method: 'POST',
-  body:JSON.stringify(data),
-  headers:{
-    'Content-Type': 'application/json'
-  }
-}
-fetch('http://localhost:4000', metodo)
-.then(r => r.json())
-.then(data => console.log(data))
-*/
+    .get("/Chat", Routers_1.index)
+    .post("/User", Routers_1.user)
+    .put("/User", Routers_1.index)
+    .delete("/User", Routers_1.index);

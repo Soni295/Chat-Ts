@@ -7,9 +7,15 @@ var express_1 = __importDefault(require("express"));
 var constants_1 = require("./config/constants");
 var CtrlRoute_1 = require("./routes/CtrlRoute");
 var body_parser_1 = require("body-parser");
+var cors = require("cors");
 //Server
 var app = express_1.default();
 //Middlewares
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:3000",
+    allowedHeaders: ["Content-Type"],
+}));
 app.use(body_parser_1.urlencoded({ extended: false }));
 app.use(express_1.default.json());
 app.use("", CtrlRoute_1.router);

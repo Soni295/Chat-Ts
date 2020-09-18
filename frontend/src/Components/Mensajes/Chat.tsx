@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-
 import { CajaMensajes } from "./CajaMensajes";
 import { Usuarios } from "./Usuarios";
 import { CajaTexto } from "./CajaTexto";
-
 import { datos } from "./Conexiones"; //Luego quitarlos
 
 import { Redirect } from "react-router-dom";
@@ -14,7 +12,7 @@ const Chat = (props: { usuario: string }): JSX.Element => {
     console.log();
   }, []);
 
-  if (props.usuario) return <Redirect to="/" />;
+  if (!props.usuario) return <Redirect to="/" />;
 
   return (
     <div id="chat">

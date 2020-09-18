@@ -1,16 +1,25 @@
 import React from "react";
 import { handleSet } from "../Logicos/Seteos"
-import { request2 } from "../Logicos/Peticiones"
+import { request } from "../Logicos/Peticiones"
 import { Menu } from "./Styled"
 import { BotonDefault } from "./Styled"
+import { useState } from "react" 
+import { Redirect } from "react-router-dom";
 
-function logIn(event:any,user:string){
+async function logIn(event:any, user:string, set:any){
   event.preventDefault()
-  request2.post()
+  const res = await request.post('User', {user:user})
+  if(res.msg === 'Ok') {
+    set(user)
+    console.log(res)
+    return <Redirect to="/Hola" />
+  } 
+  else console.log(res.msg)
 }
 
-console.log(process.env.URL)
 export const Index = (props:{ setUsuario:any, usuario:string }): JSX.Element => {
+  const [form, setForm] = useState<string>('')
+  if(props.usuario) return <Redirect to="/Chat" />
   return(
     <Menu>
       <h2>Chat Grupal</h2>
@@ -18,10 +27,10 @@ export const Index = (props:{ setUsuario:any, usuario:string }): JSX.Element => 
           <input 
             type="text" 
             name="name" 
-            onChange={( event:any ) => handleSet(event, props.setUsuario)} 
+            onChange={( event:any ) => handleSet(event, setForm)} 
           />
           <BotonDefault
-            onClick={ ( event:any ) => logIn(event, props.usuario) } 
+            onClick={ ( event:any ) => logIn(event, form, props.setUsuario) } 
           >Iniciar Sesion
           </BotonDefault>
         </form>

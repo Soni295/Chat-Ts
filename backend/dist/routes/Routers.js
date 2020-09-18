@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.chat = exports.index = void 0;
+exports.user = exports.chat = exports.index = void 0;
+var usuarios = [];
 function index(req, res) {
-    res.send("hello World");
+    res.json({ a: "a" });
 }
 exports.index = index;
 function chat(req, res) {
@@ -10,3 +11,10 @@ function chat(req, res) {
     res.json(req.body);
 }
 exports.chat = chat;
+function user(req, res) {
+    var user = req.body.user;
+    user === '' || user === ' ' ?
+        res.json({ user: user, msg: 'Error' }) :
+        res.json({ user: user, msg: 'Ok' });
+}
+exports.user = user;
